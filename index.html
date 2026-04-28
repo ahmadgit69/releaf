@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Releaf — Crisis Coordination</title>
+
+<!-- External deps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify/dist/purify.min.js"></script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="shell" id="shell">
+
+  <!-- LEFT: Chat Panel -->
+  <aside class="left-panel" id="leftPanel" aria-label="ARIA Chat">
+
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="brand">
+        <div class="brand-mark">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 11.5 Q5.2 8.5 6 4.5" stroke="currentColor" stroke-width="0.9" fill="none" stroke-linecap="round"/>
+            <path d="M6 9 Q3.5 8.5 2.5 6 Q5 6 6 9Z"/>
+            <path d="M6 7.5 Q8.5 7 9.5 4.5 Q7 4.5 6 7.5Z"/>
+            <path d="M6 6 Q3.5 5 3 2.5 Q5.5 2.5 6 6Z"/>
+            <path d="M6 4.5 Q8.5 3.5 9 1 Q6.5 1 6 4.5Z"/>
+          </svg>
+        </div>
+        <span class="brand-name">Releaf</span>
+      </div>
+      <span class="aria-label">ARIA · Field Ops</span>
+    </header>
+
+    <!-- Stats bar -->
+    <!-- removed -->
+
+    <!-- Pin context bar -->
+    <div class="pin-context-bar" id="pin-context-bar">
+      <span class="pin-icon">◎</span>
+      <span class="pin-text" id="pin-text"></span>
+      <button class="pin-clear" id="pin-clear" title="Clear pin">×</button>
+    </div>
+
+    <!-- Messages -->
+    <div class="chat-messages" id="chat-messages"></div>
+
+    <!-- Input -->
+    <div class="chat-input-wrap">
+      <div class="chat-input-row">
+        <textarea id="chat-input" rows="1" placeholder="Ask ARIA anything..." aria-label="Message ARIA"></textarea>
+        <button id="send-btn" aria-label="Send message">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M2 8h12M9 3l5 5-5 5"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Resize handle -->
+    <div class="resize-handle" id="resizeHandle"></div>
+  </aside>
+
+  <!-- RIGHT: Map Panel -->
+  <div class="right-panel">
+    <div id="map"></div>
+  </div>
+
+</div>
+
+<script src="data.js"></script>
+<script src="aria-loader.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

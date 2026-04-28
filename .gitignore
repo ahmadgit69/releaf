@@ -1,0 +1,8 @@
+# Local secrets — never commit these
+.env
+.env.local
+secrets.js
+
+# OS junk
+.DS_Store
+Thumbs.db
